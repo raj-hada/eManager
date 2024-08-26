@@ -63,7 +63,7 @@ class AnalyticsFragment : Fragment() {
 
         setupChart()
 
-
+// Set click listeners to switch between income and expense data
         binding.incomeBtn.setOnClickListener {
             binding.expenseBtn.setBackgroundResource(R.drawable.default_shape)
             binding.incomeBtn.setBackgroundResource(R.drawable.income_selector)
@@ -131,7 +131,7 @@ class AnalyticsFragment : Fragment() {
             viewModel.loadData(date)
             pieChart.centerText = "Trasaction Data"
         }
-        // Set click listeners to switch between income and expense data
+        
 
     }
 }
