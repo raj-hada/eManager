@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Analytics.AnalyticsFragment">
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Analytics"
+        android:fontFamily="@font/roboto_mono_medium"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="@color/yellow"/>
+
+    <LinearLayout
+        android:id="@+id/llDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/yellow"
+        android:layout_below="@id/label">
+        <ImageView
+            android:id="@+id/previous_day"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/back_button"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_mono_medium"
+            android:gravity="center"
+            android:text="May 15,2003"
+            android:textSize="15dp" />
+
+
+        <ImageView
+            android:id="@+id/next_day"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/back_button"
+            android:layout_alignParentRight="true"
+            android:rotation="180"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_below="@id/llDate">
+
+        <TextView
+            android:id="@+id/incomeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/income_selector"
+            android:fontFamily="@font/roboto_mono_medium"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="Income" />
+
+        <TextView
+            android:id="@+id/expenseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/default_shape"
+            android:fontFamily="@font/roboto_mono_medium"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="Expense" />
+    </LinearLayout>
+
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/linearLayout4"/>
+    <LinearLayout
+        android:id="@+id/emptyTransaction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@id/linearLayout4"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/folder"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No record found"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
